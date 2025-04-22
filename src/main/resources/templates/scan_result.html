@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ReVerve - Scan Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ReVerve</a>
+    <div class="ml-auto">
+        <a href="/home" class="btn btn-outline-primary">Back to Home</a>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Scan Result for <span th:text="${product.productName}"></span></h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        This product has a moderate environmental impact. Here are some sustainable options:
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100" onclick="window.location.href='/diy'">
+                                <div class="card-body text-center">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" width="80" class="mb-3">
+                                    <h4>DIY Ideas</h4>
+                                    <p>Find creative ways to reuse or repurpose this item</p>
+                                    <button class="btn btn-outline-success">Explore DIY Options</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100" onclick="window.location.href='/thrift-stores?product=' + encodeURIComponent('[[${product.productName}]]')">
+                                <div class="card-body text-center">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/2830/2830305.png" width="80" class="mb-3">
+                                    <h4>Thrift Stores</h4>
+                                    <p>Find places to buy/sell this item second-hand</p>
+                                    <button class="btn btn-outline-success">Find Thrift Stores</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

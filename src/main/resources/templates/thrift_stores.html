@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ReVerve - Thrift Stores</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ReVerve</a>
+    <div class="ml-auto">
+        <a href="/home" class="btn btn-outline-primary">Back to Home</a>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Thrift Stores & Exchange Centers</h3>
+                    <p th:if="${product}" class="text-center">Showing results for: <span th:text="${product}"></span></p>
+                </div>
+                <div class="card-body">
+                    <form class="mb-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for thrift stores...">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="list-group">
+                        <a th:href="@{/maps(store='Green Thrift')}" class="list-group-item list-group-item-action">
+                            <h5>Green Thrift</h5>
+                            <p>123 Eco Street, 1.2 miles away</p>
+                            <small>Specializes in clothing and home goods</small>
+                        </a>
+                        <a th:href="@{/maps(store='Sustainable Exchange')}" class="list-group-item list-group-item-action">
+                            <h5>Sustainable Exchange</h5>
+                            <p>456 Reuse Avenue, 2.5 miles away</p>
+                            <small>Community item trading center</small>
+                        </a>
+                        <a th:href="@{/maps(store='Vintage Finds')}" class="list-group-item list-group-item-action">
+                            <h5>Vintage Finds</h5>
+                            <p>789 Retro Road, 3.1 miles away</p>
+                            <small>High-quality second-hand items</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
